@@ -11,19 +11,27 @@ html {
   font-size: 16px;
 
   @include breakpoint($medium) {
-    font-size: 18px;
+    font-size: 16px; // default: 18px
   }
 
   @include breakpoint($large) {
-    font-size: 20px;
+    font-size: 18px; // default: 20px
   }
 
   @include breakpoint($x-large) {
-    font-size: 22px;
+    font-size: 18px; // default: 22px
   }
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+}
+
+article {
+  font-size: 16px;
+}
+
+code {
+  font-size: 14px;
 }
 
 /* Remove margin */
@@ -39,7 +47,7 @@ body { margin: 0; }
 
 ::selection {
   color: #fff;
-  background: #000;
+  background: $peter-color;
 }
 
 /* Display HTML5 elements in IE6-9 and FF3 */
