@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="로컬 서버" type="Multirun" separateTabs="false" reuseTabsWithFailures="false" startOneByOne="true" markFailedProcess="true" hideSuccessProcess="false" delayTime="1.0">
+    <runConfiguration name="로컬 서버 종료" type="Shell Script" />
+    <runConfiguration name="로컬 서버 시작" type="Shell Script" />
+    <runConfiguration name="브라우저 오픈" type="Shell Script" />
+    <method v="2">
+      <option name="LaunchBrowser.Before.Run" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" url="http://localhost:4000" />
+    </method>
+  </configuration>
+</component>
