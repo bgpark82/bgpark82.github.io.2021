@@ -1,8 +1,8 @@
 ---
 layout: single
-title: float과 double의 차이
+title: 고정 소수점과 부동 소수점의 차이
 categories:
-- java
+- 에프랩 멘토링 1주차
 tags: 
 - java
 ---

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="bgpark.static_block.StaticTest" tests="1" skipped="1" failures="0" errors="0" timestamp="2022-04-11T15:24:37" hostname="MacBook-Pro-4.local" time="0.264">
+  <properties/>
+  <testcase name="outOfMemory()" classname="bgpark.static_block.StaticTest" time="0.264">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
