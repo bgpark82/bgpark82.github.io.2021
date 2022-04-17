@@ -125,7 +125,24 @@ StringBuilder는 내부에 char 배열 하나를 가지고 길이를 늘리며 �
 
 ![image-20220416145512064](https://raw.githubusercontent.com/bgpark82/image/master/images/image-20220416145512064.png)
 
-- [ ] 이펙티브 자바 살펴보기
-- [ ] 자바 성능 튜닝 살펴보기
-- [ ] synchronized 블록 살펴보기
-- [ ] monitor 살펴보기
+> 참고로 **JDK 5.0 이상을 사용하면 String을 사용하더라도 컴파일 시, StringBuilder로 최적화를 해준다**
+
+# 정리
+
+String, StringBuilder, StringBuffer는 다음과 같은 상황에서 사용하는 것이 좋다
+
+**String**은 다음과 같은 경우에 사용한다
+
+1. `+` 연산으로 반복적으로 더하지 않을 때
+
+**StringBuilder**는 다음과 같은 경우에 사용한다
+
+1. 스레드를 사용하지 않는 환경에서 사용
+
+**StringBuffer**는 다음과 같은 경우에 사용한다
+
+1. 멀티 스레드 환경에서 스레드에 안전한 프로그램을 작성할 때
+2. static으로 선언된 문자열을 작성할 때
+3. singleton으로 선언된 클래스의 문자열을 수정할 때
+
+
