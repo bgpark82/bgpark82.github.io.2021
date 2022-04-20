@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 자바의 try with resource
+title: StringBuilder vs StringBuffer
 categories:
 - 에프랩 멘토링 2주차
 tags:
