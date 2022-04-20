@@ -2,6 +2,7 @@ package bgpark.equals;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.AbstractSet;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -29,6 +30,12 @@ public class EqualsTest {
         int hash1 = new Person("peter").hashCode();
         int hash2 = new Person("peter").hashCode();
         assertThat(hash1).isEqualTo(hash2);
+        Stack
+    }
+
+    @Test
+    void set() {
+        new HashSet<>();
     }
 
     static class Person {
@@ -50,9 +57,9 @@ public class EqualsTest {
             return Objects.equals(name, person.name); // name과 person.name의 주소값이 같거나 값이 같으면 true
         }
 
-//        @Override
-//        public int hashCode() {
-//            return Objects.hash(name);
-//        }
+        @Override
+        public int hashCode() {
+            return Objects.hash(name);
+        }
     }
 }
