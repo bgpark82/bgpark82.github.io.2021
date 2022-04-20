@@ -7,8 +7,6 @@ tags:
 - java
 ---
 
-# StringBuilder의 작동방식
-
 ## StringBuilder의 동작방식
 
 StringBuilder는 내부적으로는 char 배열을 사용한다.
@@ -85,7 +83,7 @@ synchronized는 스레드를 할당하기 위해 CPU 자원을 사용하므로 S
 >
 > 성능상의 차이를 측정할 수는 없을까?
 
-# 왜 StringBuilder를 사용할까?
+## 왜 StringBuilder를 사용할까?
 
 자바 프로그램에서 가장 많이 사용하는 객체는 Object, String, Collection 순이다
 
@@ -111,7 +109,7 @@ void string() {
 
 ![image-20220416143956963](https://raw.githubusercontent.com/bgpark82/image/master/images/image-20220416143956963.png)
 
-각 String의 hashCode를 사용하여 주소를 표현했다 (hashcode는 객체의 주소를 16진수로 표현한다)
+각 String의 hashCode를 사용하여 주소를 표현했다 (자바의 hashcode는 기본적으로 객체의 주소를 16진수로 표현한 값이다)
 
 String 값을 더할 때마다 기존 객체는 GC의 대상이 되고 새로운 String 객체을 생성해낸다
 
@@ -119,7 +117,7 @@ String 값을 더할 때마다 기존 객체는 GC의 대상이 되고 새로운
 
 ![image-20220416144407809](https://raw.githubusercontent.com/bgpark82/image/master/images/image-20220416144407809.png)
 
-StringBuilder는 내부에 char 배열 하나를 가지고 길이를 늘리며 문자를 추가한다
+StringBuilder는 **내부에 char 배열 하나를 가지고 길이를 늘리며 문자를 추가**한다
 
 그렇기 때문에 Heap 영역에는 배열하나만 존재하며 String 만큼 메모리를 많이 점유하거나 GC를 할 필요가 없다
 
@@ -127,22 +125,23 @@ StringBuilder는 내부에 char 배열 하나를 가지고 길이를 늘리며 �
 
 > 참고로 **JDK 5.0 이상을 사용하면 String을 사용하더라도 컴파일 시, StringBuilder로 최적화를 해준다**
 
-# 정리
+## 정리
 
 String, StringBuilder, StringBuffer는 다음과 같은 상황에서 사용하는 것이 좋다
 
 **String**은 다음과 같은 경우에 사용한다
 
-1. `+` 연산으로 반복적으로 더하지 않을 때
+- `+` 연산으로 반복적으로 더하지 않을 때
 
 **StringBuilder**는 다음과 같은 경우에 사용한다
 
-1. 스레드를 사용하지 않는 환경에서 사용
+- 스레드를 사용하지 않는 환경에서 사용
 
 **StringBuffer**는 다음과 같은 경우에 사용한다
 
-1. 멀티 스레드 환경에서 스레드에 안전한 프로그램을 작성할 때
-2. static으로 선언된 문자열을 작성할 때
-3. singleton으로 선언된 클래스의 문자열을 수정할 때
+- 멀티 스레드 환경에서 스레드에 안전한 프로그램을 작성할 때
 
+- static으로 선언된 문자열을 작성할 때
+
+- singleton으로 선언된 클래스의 문자열을 수정할 때
 
