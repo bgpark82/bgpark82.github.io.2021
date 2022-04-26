@@ -95,7 +95,7 @@ void test3() throws InterruptedException {
 
 
 
-## synchronized
+## synchronized (Blocking, Critical Section)
 
 Race Condition을 제거하기 위해 `synchronized` 블록을 사용할 수 있다
 
@@ -117,7 +117,7 @@ Thread가 작업을 끝내고 Lock을 반환해도 다른 Thread들이 바로 �
 
 
 
-## Atomic
+## Atomic (Non Blocking)
 
 Atomic은 **더이상 쪼개질 수 없는 성질**을 뜻한다 
 
