@@ -167,12 +167,14 @@ void future() {
 
 ## 정리
 
-| Runnable       | Callable                               |
-| -------------- | -------------------------------------- |
-| Java 1.0       | java 1.5                               |
-| java.lang      | java.util.concurrent                   |
-| 반환값 미존재  | Generic 타입의 작업 완료된 반환값 존재 |
-| 예외 처리 불가 | 예외 처리 가능                         |
+| Runnable           | Callable                  |
+|--------------------|---------------------------|
+| Java 1.0           | java 1.5                  |
+| java.lang          | java.util.concurrent      |
+| Thread, ThreadPool | ThreadPool                |
+| 반환값 미존재            | Generic 타입의 작업 완료된 반환값 존재 |
+| 예외 처리 불가           | 예외 처리 가능                  |
+
 
 
 
