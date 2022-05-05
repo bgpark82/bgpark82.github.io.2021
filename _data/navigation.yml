@@ -2,3 +2,5 @@
 main:
   - title: "Category"
     url: /categories/
+  - title: "Leetcode"
+    url: /leetcode/
