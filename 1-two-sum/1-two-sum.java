@@ -20,7 +20,13 @@ class Solution {
      * hash table can reduce lookup time from O(n) to O(1)
      * goal is to find the complement of the each value of index
      * we can iterate loop to add the value of each index as key and index as value
+     * so, SP will be less than the size of nums array which is O(1)
      * 
+     * in this case TC will be O(n) with two loops
+     * 
+     * 2. one traversal
+     * 
+     * in the case of multiple loop, it is fine as it's but better with one loop
      * 
      */
     // public int[] twoSum(int[] nums, int target) {
@@ -38,17 +44,30 @@ class Solution {
     //     return ans;
     // }
     
+    // public int[] twoSum(int[] nums, int target) {
+    //     Map<Integer, Integer> numMap = new HashMap();
+    //     for(int i = 0; i < nums.length; i++) {
+    //         numMap.put(nums[i], i);
+    //     }
+    //     for(int i = 0; i < nums.length; i++) {
+    //         int comp = target - nums[i];
+    //         if(numMap.containsKey(comp) && numMap.get(comp) != i) {
+    //             return new int[]{i, numMap.get(comp)};
+    //         }
+    //     }
+    //     return null;
+    // }
+    
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> numMap = new HashMap();
-        for(int i = 0; i < nums.length; i++) {
-            numMap.put(nums[i], i);
-        }
         for(int i = 0; i < nums.length; i++) {
             int comp = target - nums[i];
             if(numMap.containsKey(comp) && numMap.get(comp) != i) {
                 return new int[]{i, numMap.get(comp)};
             }
+            numMap.put(nums[i], i);
         }
+        
         return null;
     }
 }
