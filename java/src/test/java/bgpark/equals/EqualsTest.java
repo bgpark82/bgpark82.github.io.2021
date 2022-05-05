@@ -30,7 +30,6 @@ public class EqualsTest {
         int hash1 = new Person("peter").hashCode();
         int hash2 = new Person("peter").hashCode();
         assertThat(hash1).isEqualTo(hash2);
-        Stack
     }
 
     @Test

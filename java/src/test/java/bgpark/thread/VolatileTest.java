@@ -4,11 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class VolatileTest {
+
+    private static int count = 0;
 
     @Test
     void test() {
@@ -20,7 +23,7 @@ public class VolatileTest {
     }
 
     private static volatile boolean stop = false;
-    private static volatile int count = 50;
+//    private static volatile int count = 50;
 
     @Test
     void test2() throws InterruptedException {
@@ -47,6 +50,20 @@ public class VolatileTest {
         stop = true;
         Thread.sleep(1000);
         assertThat(count).isEqualTo(0);
+    }
+
+    @Test
+    void test4() throws InterruptedException {
+        ExecutorService es = Executors.newFixedThreadPool(2);
+        for (int j = 0; j < 2; j++) {
+            es.submit(() -> {
+                for (int i = 0; i < 100; i++) {
+                    count++;
+                }
+            });
+        }
+        Thread.sleep(2000);
+        assertThat(count).isEqualTo(200);
     }
 
     static class Person {
