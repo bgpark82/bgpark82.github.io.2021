@@ -39,18 +39,17 @@ class Solution {
     // }
     
     public int[] twoSum(int[] nums, int target) {
-        int[] ans = null;
         Map<Integer, Integer> numMap = new HashMap();
         for(int i = 0; i < nums.length; i++) {
             numMap.put(nums[i], i);
         }
         for(int i = 0; i < nums.length; i++) {
-            Integer prevId = numMap.get(target-nums[i]);
-            if(prevId != null && prevId != i) {
-                ans = new int[]{i, prevId};
+            int comp = target - nums[i];
+            if(numMap.containsKey(comp) && numMap.get(comp) != i) {
+                return new int[]{i, numMap.get(comp)};
             }
         }
-        return ans;
+        return null;
     }
 }
 
