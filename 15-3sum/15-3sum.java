@@ -27,6 +27,10 @@ class Solution {
 //         return list;
 //     }
 
+    /**
+     * another two pointer questions
+     * we can use cache or binary search
+     */
     public List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> ans = new HashSet();
         Arrays.sort(nums);
