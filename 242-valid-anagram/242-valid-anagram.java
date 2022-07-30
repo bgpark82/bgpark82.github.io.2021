@@ -1,10 +1,12 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
         
-        if(s.length() != t.length()) return false;
         
         // lowercase english letter (ascii)
         int[] arr = new int[26];
+        
+        if(s.length() != t.length()) return false;
+        
         
         for(int i = 0; i < s.length(); i++) {
             arr[s.charAt(i)-'a']++;
