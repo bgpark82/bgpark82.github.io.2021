@@ -1,22 +1,20 @@
 class Solution {
     public boolean isAnagram(String s, String t) {
+        
         if(s.length() != t.length()) return false;
         
+        // lowercase english letter (ascii)
+        int[] arr = new int[26];
         
-        char[] sc = s.toCharArray();
-        char[] tc = t.toCharArray();
-        
-        Arrays.sort(sc);
-        Arrays.sort(tc);
-        
-        boolean check = true;
         for(int i = 0; i < s.length(); i++) {
-            if(sc[i] != tc[i]) {
-                check = false;
-                break;
-            }
+            arr[s.charAt(i)-'a']++;
+            arr[t.charAt(i)-'a']--;
         }
         
-        return check;
+        for(int i = 0; i < 26; i++) {
+            if(arr[i] != 0) return false;
+        }
+        
+        return true;
     }
 }
